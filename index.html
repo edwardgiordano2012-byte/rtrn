@@ -297,7 +297,7 @@ async function sendMessage(){
   const delay=1000+Math.random()*1000;
   await new Promise(r=>setTimeout(r,delay));
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
+    const res=await fetch('https:///api/chat/v1/messages',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
