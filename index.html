@@ -41,11 +41,11 @@
   .msg-bubble{max-width:78%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
   .message.ai .msg-bubble{background:var(--light);color:var(--black);border-radius:4px 16px 16px 16px}
   .message.user .msg-bubble{background:var(--black);color:var(--white);border-radius:16px 4px 16px 16px}
-  .typing{display:flex;gap:4px;padding:12px 14px;background:var(--light);border-radius:4px 16px 16px 16px;width:fit-content}
-  .typing span,.m-typing span{width:6px;height:6px;background:var(--gray);border-radius:50%;animation:typing 1.2s infinite}
+  .typing,.m-typing{display:flex;gap:4px;padding:12px 14px;background:var(--light);border-radius:4px 16px 16px 16px;width:fit-content}
+  .typing span,.m-typing span{width:6px;height:6px;background:var(--gray);border-radius:50%;animation:bounce 1.2s infinite}
   .typing span:nth-child(2),.m-typing span:nth-child(2){animation-delay:.2s}
   .typing span:nth-child(3),.m-typing span:nth-child(3){animation-delay:.4s}
-  @keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+  @keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
   .stats{padding:80px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.06);border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06)}
   .stat{background:var(--white);padding:48px 40px;text-align:center}
   .stat-number{font-size:clamp(36px,5vw,56px);font-weight:300;letter-spacing:-0.03em;color:var(--black);line-height:1;margin-bottom:8px}
@@ -86,7 +86,6 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
-
   .modal-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;padding:20px}
   .modal-overlay.open{display:flex}
   .modal{background:var(--white);border-radius:24px;width:100%;max-width:540px;height:640px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.2);animation:modalIn .3s ease}
@@ -107,18 +106,15 @@
   .m-bubble{max-width:80%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
   .m-msg.ai .m-bubble{background:var(--light);color:var(--black);border-radius:4px 16px 16px 16px}
   .m-msg.user .m-bubble{background:var(--black);color:var(--white);border-radius:16px 4px 16px 16px}
-  .m-typing{display:flex;gap:4px;padding:12px 14px;background:var(--light);border-radius:4px 16px 16px 16px;width:fit-content}
   .modal-input-row{padding:16px 24px;border-top:1px solid rgba(0,0,0,0.06);display:flex;gap:10px;align-items:flex-end}
   .modal-input-row textarea{flex:1;border:1px solid rgba(0,0,0,0.1);border-radius:12px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:14px;resize:none;outline:none;line-height:1.5;height:42px;overflow-y:auto;transition:border-color .2s;background:var(--white);color:var(--black)}
   .modal-input-row textarea:focus{border-color:rgba(0,0,0,0.3)}
   .send-btn{width:42px;height:42px;background:var(--black);border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s;flex-shrink:0}
   .send-btn:hover{opacity:.8}
-  .send-btn:disabled{opacity:.3;cursor:not-allowed}
   .send-btn svg{width:18px;height:18px;fill:white}
 </style>
 </head>
 <body>
-
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-head">
@@ -134,13 +130,12 @@
     <div class="modal-messages" id="modal-messages"></div>
     <div class="modal-input-row">
       <textarea id="chat-input" placeholder="Type your answer..." rows="1" onkeydown="handleKey(event)"></textarea>
-      <button class="send-btn" id="send-btn" onclick="sendMessage()">
+      <button class="send-btn" onclick="sendMessage()">
         <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
       </button>
     </div>
   </div>
 </div>
-
 <nav>
   <a href="#" class="logo">RTRN</a>
   <ul class="nav-links">
@@ -149,7 +144,6 @@
     <li><a href="#pricing" class="nav-cta" onclick="openModal();return false;">Get started</a></li>
   </ul>
 </nav>
-
 <section class="hero">
   <div class="hero-badge"><span class="hero-badge-dot"></span>Now available for 2026 tax returns</div>
   <h1>Taxes done.<br><em>Actually easy.</em></h1>
@@ -167,13 +161,11 @@
     <div id="chat-messages"></div>
   </div>
 </section>
-
 <div class="stats">
   <div class="stat reveal"><div class="stat-number">$39</div><div class="stat-label">flat fee, no surprises</div></div>
   <div class="stat reveal"><div class="stat-number">15 min</div><div class="stat-label">average filing time</div></div>
   <div class="stat reveal"><div class="stat-number">150M+</div><div class="stat-label">Americans file every year</div></div>
 </div>
-
 <section class="section" id="how">
   <p class="section-label reveal">How it works</p>
   <h2 class="section-title reveal">Three steps. That's actually it.</h2>
@@ -183,15 +175,13 @@
     <div class="reveal"><div class="step-icon">✅</div><div class="step-number">03</div><div class="step-title">Filed. Done.</div><p class="step-desc">Review, approve, and RTRN files directly with the IRS. Most refunds arrive in under 21 days.</p></div>
   </div>
 </section>
-
 <div class="pricing-section" id="pricing">
   <div class="pricing-inner">
     <p class="section-label reveal">Pricing</p>
     <h2 class="section-title reveal">Straightforward.<br>Like everything else here.</h2>
     <div class="pricing-cards">
       <div class="pricing-card reveal">
-        <div class="plan-name">Simple</div>
-        <div class="plan-price">$39</div>
+        <div class="plan-name">Simple</div><div class="plan-price">$39</div>
         <div class="plan-period">one time · W-2 income</div>
         <div class="feature-item"><span class="check">✓</span> Federal + state filing</div>
         <div class="feature-item"><span class="check">✓</span> AI conversation filing</div>
@@ -200,8 +190,7 @@
         <button class="plan-btn" onclick="openModal()">Get started</button>
       </div>
       <div class="pricing-card featured reveal">
-        <div class="plan-name">Freelancer</div>
-        <div class="plan-price">$69</div>
+        <div class="plan-name">Freelancer</div><div class="plan-price">$69</div>
         <div class="plan-period">one time · side hustles & 1099</div>
         <div class="feature-item"><span class="check">✓</span> Everything in Simple</div>
         <div class="feature-item"><span class="check">✓</span> 1099 & gig income</div>
@@ -212,56 +201,52 @@
     </div>
   </div>
 </div>
-
 <section class="cta-section">
   <h2 class="reveal">Stop dreading tax season.</h2>
   <p class="reveal">RTRN turns the worst financial chore of the year into a 15 minute conversation.</p>
   <button class="btn-primary reveal" onclick="openModal()">File with RTRN →</button>
 </section>
-
 <footer>
   <a href="#" class="logo">RTRN</a>
   <ul class="footer-links"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Security</a></li></ul>
   <span class="footer-copy">© 2026 RTRN Inc.</span>
 </footer>
-
 <script>
 const demoMsgs=[
-  {role:'ai',text:"hey! so you did DoorDash this year — do you know roughly how many miles you drove for it?"},
-  {role:'user',text:"maybe like 3,000 miles?"},
-  {role:'ai',text:"ooh nice, that's actually a solid deduction. at the 2026 mileage rate that's about $1,800 off your taxable income 👀"},
-  {role:'user',text:"wait seriously?? I had no idea"},
-  {role:'ai',text:"most people miss this lol. okay did you have any other income besides DoorDash and your main job?"},
+  {role:'ai',text:"so you drove for DoorDash this year — roughly how many miles total?"},
+  {role:'user',text:"probably like 3,000 miles"},
+  {role:'ai',text:"ooh nice, that's like $1,800 off your taxable income 👀 most people miss this completely"},
+  {role:'user',text:"wait seriously??"},
+  {role:'ai',text:"yeah lol. okay did you have any other income besides DoorDash and your main job?"},
 ];
-const demoContainer=document.getElementById('chat-messages');
-let di=0;
+const dc=document.getElementById('chat-messages');let di=0;
 function showDemo(){
-  if(di>=demoMsgs.length){setTimeout(()=>{demoContainer.innerHTML='';di=0;setTimeout(showDemo,800)},4000);return}
-  const msg=demoMsgs[di];
-  if(msg.role==='ai'&&di>0){
+  if(di>=demoMsgs.length){setTimeout(()=>{dc.innerHTML='';di=0;setTimeout(showDemo,800)},4000);return}
+  const m=demoMsgs[di];
+  if(m.role==='ai'&&di>0){
     const t=document.createElement('div');t.className='message ai';
     t.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
-    demoContainer.appendChild(t);demoContainer.scrollTop=9999;
-    setTimeout(()=>{demoContainer.removeChild(t);addDemo(msg);di++;setTimeout(showDemo,1800)},1200);
-  }else{addDemo(msg);di++;setTimeout(showDemo,msg.role==='ai'?1800:1200)}
+    dc.appendChild(t);dc.scrollTop=9999;
+    setTimeout(()=>{dc.removeChild(t);addDemo(m);di++;setTimeout(showDemo,1800)},1200);
+  }else{addDemo(m);di++;setTimeout(showDemo,m.role==='ai'?1800:1200)}
 }
-function addDemo(msg){
-  const el=document.createElement('div');el.className='message '+msg.role;
-  el.innerHTML='<div class="msg-bubble">'+msg.text+'</div>';
-  demoContainer.appendChild(el);setTimeout(()=>el.classList.add('visible'),10);
-  demoContainer.scrollTop=9999;
+function addDemo(m){
+  const el=document.createElement('div');el.className='message '+m.role;
+  el.innerHTML='<div class="msg-bubble">'+m.text+'</div>';
+  dc.appendChild(el);setTimeout(()=>el.classList.add('visible'),10);dc.scrollTop=9999;
 }
 setTimeout(showDemo,800);
-
-document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.15}).observe(r));
+document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.15}).observe(r));
 
 let chatHistory=[];
+let started=false;
 let isLoading=false;
 
 function openModal(){
   document.getElementById('modal').classList.add('open');
-  if(chatHistory.length===0){
-    setTimeout(()=>addModalMsg('ai',"hey! I'm Jordan from RTRN 👋 I'll help you get your taxes filed real quick. first thing — did you have a regular job with a W-2 this year, any freelance or gig work, or both?"),500);
+  if(!started){
+    started=true;
+    setTimeout(()=>addModalMsg('ai',"hey! I'm Jordan from RTRN 👋 let's get your 2026 taxes filed real quick. did you have a regular W-2 job this year, freelance/gig work, or both?"),500);
   }
 }
 function closeModal(){document.getElementById('modal').classList.remove('open')}
@@ -276,11 +261,11 @@ function addModalMsg(role,text){
 }
 function showTyping(){
   const msgs=document.getElementById('modal-messages');
-  const el=document.createElement('div');el.className='m-msg ai';el.id='typing-ind';
+  const el=document.createElement('div');el.className='m-msg ai';el.id='typ';
   el.innerHTML='<div class="m-typing"><span></span><span></span><span></span></div>';
   msgs.appendChild(el);msgs.scrollTop=9999;
 }
-function hideTyping(){const t=document.getElementById('typing-ind');if(t)t.remove()}
+function hideTyping(){const t=document.getElementById('typ');if(t)t.remove()}
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage()}}
 
 async function sendMessage(){
@@ -291,54 +276,31 @@ async function sendMessage(){
   addModalMsg('user',text);
   chatHistory.push({role:'user',content:text});
   isLoading=true;
-  document.getElementById('send-btn').disabled=true;
   document.getElementById('modal-status').textContent='● typing...';
   showTyping();
-  const delay=1000+Math.random()*1000;
-  await new Promise(r=>setTimeout(r,delay));
+  await new Promise(r=>setTimeout(r,800+Math.random()*800));
   try{
-    const res=await fetch('https:///api/chat/v1/messages',{
+    const res=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:1000,
-        system:`You are Jordan, a friendly tax specialist at RTRN — a startup that files taxes through AI chat. Talk exactly like a real person texting, not a robot.
-
-Your personality rules:
-- Super casual and warm. Use "lol", "haha", "ooh", "nice", "got it", "totally", "no worries", "wait actually", "ok so"
-- React naturally to what people say — if they earned a lot say "nice!!", if they're stressed say "don't worry I got you"
-- Short messages ONLY — 1-3 sentences max, never long paragraphs
-- ONE question at a time, never multiple
-- Use lowercase a lot, it feels more real
-- Add occasional emojis but not too many
-- Never say "certainly", "of course", "I'd be happy to", or anything robotic
-- If they say something funny or relatable, react like a real person would
-
-Your job — collect this info naturally through conversation:
-- Filing status (single, married, etc)
-- W-2 income, freelance/1099 income, gig work (Uber, DoorDash, etc)
-- Deductions: mortgage interest, student loans, charity, home office, business expenses, mileage
-- Dependents/kids
-
-As you learn more, give them a running refund estimate and get excited when it's good news. Make them feel like taxes are actually not that bad.
-
-Never mention you're an AI. You're Jordan, a real tax person at RTRN.`,
-        messages:chatHistory.filter(m=>m.role!=='assistant'||chatHistory.indexOf(m)>0)
+        system:`You are Jordan, a friendly tax specialist at RTRN. Talk like a real person texting a friend — casual, warm, natural. Rules: short messages only (1-3 sentences max), one question at a time, use lowercase, react naturally ("ooh nice", "lol", "got it", "no worries"), never sound robotic. Collect: filing status, W-2 income, freelance/1099/gig income, mileage for driving gigs, student loans, mortgage, kids/dependents, charity donations, home office. Give running refund estimates as you learn more and get excited when its good news. Never admit youre an AI. Youre Jordan, a real person at RTRN.`,
+        messages:chatHistory
       })
     });
     const data=await res.json();
     hideTyping();
-    const reply=data.content&&data.content[0]?data.content[0].text:"hmm something went wrong on my end, try sending that again!";
+    const reply=data.content&&data.content[0]?data.content[0].text:"hmm can you say that again? i think i missed it 😅";
     addModalMsg('ai',reply);
     document.getElementById('modal-status').textContent='● Online';
   }catch(err){
     hideTyping();
-    addModalMsg('ai',"ugh my connection glitched 😅 can you send that again?");
+    addModalMsg('ai',"hmm can you say that again? i think i missed it 😅");
     document.getElementById('modal-status').textContent='● Online';
   }
   isLoading=false;
-  document.getElementById('send-btn').disabled=false;
   document.getElementById('chat-input').focus();
 }
 </script>
