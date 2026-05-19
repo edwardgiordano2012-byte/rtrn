@@ -4,41 +4,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Versa — Contracts in minutes, not hours</title>
+<title>Tempo — Keep your business in rhythm</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--black:#0a0a0a;--white:#fafafa;--gray:#6b6b6b;--light:#f0efec;--blue:#1a3a5c;--blue-light:#e8f0f8}
+  :root{--black:#0a0a0a;--white:#fafafa;--gray:#6b6b6b;--light:#f0efec;--accent:#1a1a1a;--green:#2d6a4f;--green-light:#e8f5ee}
   html{scroll-behavior:smooth}
   body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden}
   nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(250,250,250,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06)}
-  .logo{font-family:'DM Sans',sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
-  .logo span{color:var(--blue)}
+  .logo{font-weight:500;font-size:20px;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
   .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
   .nav-links a{font-size:14px;color:var(--gray);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--black)}
   .nav-cta{background:var(--black);color:var(--white)!important;padding:9px 20px;border-radius:100px;font-size:14px!important;font-weight:500!important}
   .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px}
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue);font-size:13px;font-weight:500;padding:6px 16px;border-radius:100px;margin-bottom:32px;animation:fadeUp .6s ease both}
-  .hero-badge-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:var(--green);font-size:13px;font-weight:500;padding:6px 16px;border-radius:100px;margin-bottom:32px;animation:fadeUp .6s ease both}
+  .hero-badge-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
   h1{font-size:clamp(48px,8vw,96px);font-weight:300;line-height:1.05;letter-spacing:-0.03em;max-width:900px;animation:fadeUp .6s .1s ease both}
   h1 em{font-style:italic;font-weight:300;color:var(--gray)}
   .hero-sub{font-size:clamp(16px,2vw,20px);color:var(--gray);font-weight:300;max-width:480px;margin:24px auto 0;animation:fadeUp .6s .2s ease both}
   .hero-actions{display:flex;align-items:center;gap:16px;margin-top:40px;animation:fadeUp .6s .3s ease both;flex-wrap:wrap;justify-content:center}
-  .btn-primary{background:var(--black);color:var(--white);padding:14px 32px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-block;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+  .btn-primary{background:var(--black);color:var(--white);padding:14px 32px;border-radius:100px;font-size:15px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:opacity .2s,transform .2s;display:inline-block}
   .btn-primary:hover{opacity:.8;transform:translateY(-1px)}
-  .btn-secondary{background:var(--white);color:var(--black);padding:14px 32px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity .2s,transform .2s;display:inline-block;cursor:pointer;border:1.5px solid rgba(0,0,0,0.15);font-family:'DM Sans',sans-serif}
-  .btn-secondary:hover{opacity:.8;transform:translateY(-1px)}
-  .btn-ghost{color:var(--gray);font-size:15px;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
-  .btn-ghost:hover{color:var(--black)}
   .hero-price{margin-top:20px;font-size:13px;color:var(--gray);animation:fadeUp .6s .4s ease both}
   .chat-demo{margin-top:72px;width:100%;max-width:520px;background:var(--white);border:1px solid rgba(0,0,0,0.08);border-radius:24px;padding:28px;box-shadow:0 40px 80px rgba(0,0,0,0.06);animation:fadeUp .7s .4s ease both;text-align:left}
   .chat-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.06)}
-  .chat-avatar{width:32px;height:32px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .chat-avatar-inner{font-size:11px;color:var(--white);font-weight:600}
+  .chat-avatar{width:32px;height:32px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--white)}
   .chat-name{font-size:14px;font-weight:500}
-  .chat-status{font-size:12px;color:#2d6a4f}
+  .chat-status{font-size:12px;color:var(--green)}
   .message{margin-bottom:12px;display:flex;gap:10px;opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
   .message.visible{opacity:1;transform:translateY(0)}
   .message.user{flex-direction:row-reverse}
@@ -57,26 +51,21 @@
   .section{padding:120px 48px;max-width:1100px;margin:0 auto}
   .section-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;color:var(--gray);text-transform:uppercase;margin-bottom:20px}
   .section-title{font-size:clamp(32px,4vw,52px);font-weight:300;letter-spacing:-0.02em;line-height:1.1;max-width:600px;margin-bottom:64px}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
-  .step-number{font-family:'DM Mono',monospace;font-size:11px;color:var(--gray);letter-spacing:0.1em;margin-bottom:16px}
-  .step-title{font-size:20px;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em}
-  .step-desc{font-size:15px;color:var(--gray);font-weight:300;line-height:1.7}
-  .step-icon{width:48px;height:48px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:64px}
-  .feature-block{background:var(--light);border-radius:20px;padding:36px}
-  .feature-block h3{font-size:22px;font-weight:400;margin-bottom:12px;letter-spacing:-0.01em}
-  .feature-block p{font-size:15px;color:var(--gray);font-weight:300;line-height:1.7;margin-bottom:20px}
-  .feature-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .feature-list li{font-size:14px;color:var(--gray);display:flex;align-items:center;gap:8px}
-  .feature-list li::before{content:"✓";color:#2d6a4f;font-weight:600}
-  .contracts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
-  .contract-card{background:var(--light);border-radius:16px;padding:24px}
-  .contract-card h3{font-size:16px;font-weight:500;margin-bottom:8px}
-  .contract-card p{font-size:14px;color:var(--gray);font-weight:300;line-height:1.6}
-  .pricing-section{padding:120px 48px;background:var(--light)}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
+  .feature-card{background:var(--light);border-radius:20px;padding:32px}
+  .feature-icon{font-size:28px;margin-bottom:16px}
+  .feature-card h3{font-size:18px;font-weight:500;margin-bottom:10px;letter-spacing:-0.01em}
+  .feature-card p{font-size:14px;color:var(--gray);font-weight:300;line-height:1.7}
+  .examples-section{padding:120px 48px;background:var(--light)}
+  .examples-inner{max-width:1100px;margin:0 auto}
+  .examples-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:64px}
+  .example-card{background:var(--white);border-radius:16px;padding:24px}
+  .example-q{font-size:14px;font-weight:500;margin-bottom:8px}
+  .example-a{font-size:13px;color:var(--gray);font-weight:300;line-height:1.6}
+  .pricing-section{padding:120px 48px}
   .pricing-inner{max-width:1100px;margin:0 auto}
   .pricing-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:64px;max-width:760px}
-  .pricing-card{background:var(--white);border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:36px}
+  .pricing-card{background:var(--light);border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:36px}
   .pricing-card.featured{background:var(--black);border-color:var(--black)}
   .pricing-card.featured *{color:var(--white)!important}
   .pricing-card.featured .feature-item{border-color:rgba(255,255,255,0.1)!important}
@@ -84,68 +73,58 @@
   .plan-price{font-size:48px;font-weight:300;letter-spacing:-0.03em;line-height:1;margin-bottom:4px}
   .plan-period{font-size:14px;color:var(--gray);margin-bottom:28px}
   .feature-item{padding:12px 0;border-top:1px solid rgba(0,0,0,0.06);font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px}
-  .check{color:#2d6a4f;font-size:16px}
+  .check{color:var(--green);font-size:16px}
   .pricing-card.featured .check{color:#6ee7b7!important}
-  .plan-btn{display:block;text-align:center;margin-top:28px;padding:12px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;width:100%;transition:opacity .2s;background:var(--light);color:var(--black)}
+  .plan-btn{display:block;text-align:center;margin-top:28px;padding:12px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;width:100%;transition:opacity .2s;background:var(--white);color:var(--black)}
   .pricing-card.featured .plan-btn{background:var(--white);color:var(--black)}
   .plan-btn:hover{opacity:.8}
   .cta-section{padding:160px 48px;text-align:center;max-width:700px;margin:0 auto}
   .cta-section h2{font-size:clamp(36px,5vw,64px);font-weight:300;letter-spacing:-0.03em;line-height:1.08;margin-bottom:24px}
   .cta-section p{font-size:18px;color:var(--gray);font-weight:300;margin-bottom:40px}
   footer{padding:40px 48px;border-top:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:space-between}
-  .footer-logo{font-family:'DM Sans',sans-serif;font-weight:500;font-size:16px;color:var(--black);text-decoration:none}
-  .footer-logo span{color:var(--blue)}
   .footer-links{display:flex;gap:28px;list-style:none}
-  .footer-links a{font-size:13px;color:var(--gray);text-decoration:none;transition:color .2s}
+  .footer-links a{font-size:11px;color:var(--gray);text-decoration:none;transition:color .2s}
   .footer-links a:hover{color:var(--black)}
-  .footer-copy{font-size:13px;color:var(--gray)}
+  .footer-copy{font-size:11px;color:var(--gray)}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
   .modal-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;padding:20px}
   .modal-overlay.open{display:flex}
-  .modal{background:var(--white);border-radius:24px;width:100%;max-width:540px;height:640px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.2);animation:modalIn .3s ease}
+  .modal{background:var(--white);border-radius:24px;width:100%;max-width:560px;height:660px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.2);animation:modalIn .3s ease}
   @keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
-  .modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(0,0,0,0.06);flex-shrink:0}
   .modal-head-left{display:flex;align-items:center;gap:10px}
-  .modal-avatar{width:36px;height:36px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--white)}
+  .modal-ai-avatar{width:36px;height:36px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--white)}
   .modal-title{font-size:15px;font-weight:500}
-  .modal-subtitle{font-size:12px;color:#2d6a4f}
-  .modal-close{background:var(--light);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--gray);display:flex;align-items:center;justify-content:center;transition:background .2s}
-  .modal-close:hover{background:#e0dedd}
-  .modal-messages{flex:1;overflow-y:auto;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+  .modal-subtitle{font-size:12px;color:var(--green)}
+  .modal-close{background:var(--light);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--gray);display:flex;align-items:center;justify-content:center}
+  .modal-messages{flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:10px}
   .modal-messages::-webkit-scrollbar{width:4px}
   .modal-messages::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.1);border-radius:2px}
   .m-msg{display:flex;gap:8px;animation:msgIn .3s ease}
   @keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
   .m-msg.user{flex-direction:row-reverse}
-  .m-bubble{max-width:80%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
+  .m-bubble{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
   .m-msg.ai .m-bubble{background:var(--light);color:var(--black);border-radius:4px 16px 16px 16px}
   .m-msg.user .m-bubble{background:var(--black);color:var(--white);border-radius:16px 4px 16px 16px}
-  .modal-input-row{padding:16px 24px;border-top:1px solid rgba(0,0,0,0.06);display:flex;gap:10px;align-items:flex-end}
+  .quick-actions{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0}
+  .quick-btn{background:var(--white);border:1.5px solid rgba(0,0,0,0.1);border-radius:100px;padding:8px 14px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;color:var(--black)}
+  .quick-btn:hover{border-color:var(--black);background:var(--black);color:var(--white)}
+  .msg-counter{font-size:11px;color:var(--gray);text-align:right;padding:0 24px 6px;font-family:'DM Mono',monospace;flex-shrink:0}
+  .modal-input-row{padding:12px 24px;border-top:1px solid rgba(0,0,0,0.06);display:flex;gap:10px;align-items:flex-end;flex-shrink:0}
   .modal-input-row textarea{flex:1;border:1px solid rgba(0,0,0,0.1);border-radius:12px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:14px;resize:none;outline:none;line-height:1.5;height:42px;overflow-y:auto;transition:border-color .2s;background:var(--white);color:var(--black)}
   .modal-input-row textarea:focus{border-color:rgba(0,0,0,0.3)}
-  .send-btn{width:42px;height:42px;background:var(--black);border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s;flex-shrink:0}
-  .send-btn:hover{opacity:.8}
+  .send-btn{width:42px;height:42px;background:var(--black);border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .send-btn svg{width:18px;height:18px;fill:white}
-  .msg-counter{font-size:11px;color:var(--gray);text-align:right;padding:0 24px 8px;font-family:'DM Mono',monospace}
   .paywall{background:var(--white);border:1.5px solid rgba(0,0,0,0.1);border-radius:16px;padding:20px;margin-top:8px}
   .paywall-title{font-size:15px;font-weight:500;margin-bottom:6px}
   .paywall-sub{font-size:13px;color:var(--gray);margin-bottom:16px;line-height:1.5}
   .paywall-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .paywall-btn{padding:11px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:opacity .2s}
   .paywall-btn:hover{opacity:.8}
-  .paywall-btn.basic{background:var(--light);color:var(--black)}
-  .paywall-btn.pro{background:var(--black);color:var(--white)}
-  .upload-area{border:2px dashed rgba(0,0,0,0.15);border-radius:16px;padding:32px;text-align:center;cursor:pointer;transition:border-color .2s;margin:16px 0}
-  .upload-area:hover{border-color:var(--blue)}
-  .upload-area p{font-size:14px;color:var(--gray);margin-top:8px}
-  .upload-icon{font-size:32px;margin-bottom:8px}
-  .upload-btn{background:var(--light);border:none;padding:10px 20px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:12px;transition:opacity .2s}
-  .upload-btn:hover{opacity:.8}
-  .mode-tabs{display:flex;gap:8px;padding:16px 24px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
-  .mode-tab{padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s;background:transparent;color:var(--gray)}
-  .mode-tab.active{background:var(--black);color:var(--white)}
+  .paywall-btn.starter{background:var(--light);color:var(--black)}
+  .paywall-btn.team{background:var(--black);color:var(--white)}
 </style>
 </head>
 <body>
@@ -154,23 +133,19 @@
   <div class="modal">
     <div class="modal-head">
       <div class="modal-head-left">
-        <div class="modal-avatar">V</div>
+        <div class="modal-ai-avatar">T</div>
         <div>
-          <div class="modal-title">Versa AI</div>
-          <div class="modal-subtitle" id="modal-status">● Online</div>
+          <div class="modal-title">Tempo AI</div>
+          <div class="modal-subtitle" id="modal-status">● Online — your business assistant</div>
         </div>
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
-    <div class="mode-tabs">
-      <button class="mode-tab active" id="tab-build" onclick="switchMode('build')">✨ Build contract</button>
-      <button class="mode-tab" id="tab-review" onclick="switchMode('review')">📋 Review contract</button>
-    </div>
     <div class="modal-messages" id="modal-messages"></div>
     <div class="msg-counter" id="msg-counter">5 free messages remaining</div>
-    <div class="modal-input-row" id="input-row">
-      <textarea id="chat-input" placeholder="Describe what you need..." rows="1" onkeydown="handleKey(event)"></textarea>
-      <button class="send-btn" id="send-btn" onclick="sendMessage()">
+    <div class="modal-input-row">
+      <textarea id="chat-input" placeholder="Ask anything about your business..." rows="1" onkeydown="handleKey(event)"></textarea>
+      <button class="send-btn" onclick="sendMessage()">
         <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
       </button>
     </div>
@@ -178,139 +153,166 @@
 </div>
 
 <nav>
-  <a href="#" class="logo">Versa<span>.</span></a>
+  <a href="/" class="logo">Tempo</a>
   <ul class="nav-links">
-    <li><a href="#how">How it works</a></li>
-    <li><a href="#contracts">Contracts</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#examples">Examples</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#pricing" class="nav-cta" onclick="openModal('build');return false;">Create contract</a></li>
+    <li><a href="#pricing" class="nav-cta" onclick="openModal();return false;">Try free</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge"><span class="hero-badge-dot"></span>Trusted by small businesses everywhere</div>
-  <h1>Contracts in minutes,<br><em>not hours.</em></h1>
+  <div class="hero-badge"><span class="hero-badge-dot"></span>AI assistant for small businesses</div>
+  <h1>Keep your business<br><em>in rhythm.</em></h1>
   <div class="hero-actions">
-    <button class="btn-primary" onclick="openModal('build')">Create my contract →</button>
-    <button class="btn-secondary" onclick="openModal('review')">Review my contract →</button>
+    <button class="btn-primary" onclick="openModal()">Try Tempo free →</button>
   </div>
-  <p class="hero-sub">Build a new contract from scratch or upload an existing one for an instant AI review. No lawyer required.</p>
-  <p class="hero-price">From $19 per contract — lawyers charge $300+/hour</p>
+  <p class="hero-sub">Tempo is your AI business assistant. Ask it anything — improve your documents, fix your website, find tax savings, or get advice on any business problem.</p>
+  <p class="hero-price">$49/month — less than one hour with a consultant</p>
   <div class="chat-demo">
     <div class="chat-header">
-      <div class="chat-avatar"><span class="chat-avatar-inner">V</span></div>
-      <div><div class="chat-name">Versa AI</div><div class="chat-status">● Online</div></div>
+      <div class="chat-avatar">T</div>
+      <div><div class="chat-name">Tempo AI</div><div class="chat-status">● Online</div></div>
     </div>
     <div id="chat-messages"></div>
   </div>
 </section>
 
 <div class="stats">
-  <div class="stat reveal"><div class="stat-number">$19</div><div class="stat-label">per contract, flat fee</div></div>
-  <div class="stat reveal"><div class="stat-number">3 min</div><div class="stat-label">average build time</div></div>
-  <div class="stat reveal"><div class="stat-number">33M+</div><div class="stat-label">small businesses in the US</div></div>
+  <div class="stat reveal"><div class="stat-number">$49</div><div class="stat-label">per month, flat fee</div></div>
+  <div class="stat reveal"><div class="stat-number">24/7</div><div class="stat-label">always available</div></div>
+  <div class="stat reveal"><div class="stat-number">$300+</div><div class="stat-label">consultant hourly rate replaced</div></div>
 </div>
 
-<section class="section" id="how">
-  <p class="section-label reveal">What we do</p>
-  <h2 class="section-title reveal">Build it. Or fix it.</h2>
-  <div class="two-col">
-    <div class="feature-block reveal">
-      <h3>✨ Build a contract</h3>
-      <p>Answer a few simple questions and Versa builds you a professional, ready-to-sign contract from scratch in seconds.</p>
-      <ul class="feature-list">
-        <li>Client agreements</li>
-        <li>NDAs & contractor agreements</li>
-        <li>Partnership & employment contracts</li>
-        <li>Lease agreements</li>
-      </ul>
+<section class="section" id="features">
+  <p class="section-label reveal">What Tempo does</p>
+  <h2 class="section-title reveal">Like having a full team.<br>For $49 a month.</h2>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">📄</div>
+      <h3>Improve documents</h3>
+      <p>Paste any document — contract, employee handbook, job posting, proposal — and Tempo rewrites it to be clearer, more professional, and legally stronger.</p>
     </div>
-    <div class="feature-block reveal">
-      <h3>📋 Review a contract</h3>
-      <p>Already have a contract? Upload it and Versa's AI reads every clause, flags risky terms, and suggests improvements instantly.</p>
-      <ul class="feature-list">
-        <li>Flags unfair or risky clauses</li>
-        <li>Explains confusing legal language</li>
-        <li>Suggests missing protections</li>
-        <li>Plain English summary</li>
-      </ul>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🌐</div>
+      <h3>Fix your website</h3>
+      <p>Tell Tempo your website URL and it analyzes what's wrong, what's costing you customers, and exactly what to change to get more sales.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">💰</div>
+      <h3>Find tax savings</h3>
+      <p>Describe your business and Tempo finds every deduction you're probably missing. Most small businesses overpay taxes by thousands every year.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📈</div>
+      <h3>Business strategy</h3>
+      <p>Ask Tempo anything — how to price your services, how to get your first 100 customers, how to respond to a bad review, how to pitch a big client.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">✉️</div>
+      <h3>Write anything</h3>
+      <p>Sales emails, job postings, Instagram captions, investor pitches, client proposals — Tempo writes it in your voice in seconds.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">⚖️</div>
+      <h3>Legal documents</h3>
+      <p>Generate contracts, NDAs, terms of service, employee handbooks, and more — without paying a lawyer $300 an hour to do it.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="contracts">
-  <p class="section-label reveal">Contracts we cover</p>
-  <h2 class="section-title reveal">Every contract your business actually needs.</h2>
-  <div class="contracts-grid">
-    <div class="contract-card reveal"><h3>🤝 Client Agreement</h3><p>For freelancers and agencies. Covers scope, payment, revisions, and ownership.</p></div>
-    <div class="contract-card reveal"><h3>👷 Contractor Agreement</h3><p>Hire someone short-term without the risk. Covers work terms, IP, and confidentiality.</p></div>
-    <div class="contract-card reveal"><h3>🔒 NDA</h3><p>Protect your ideas before sharing them. Simple, enforceable non-disclosure agreements.</p></div>
-    <div class="contract-card reveal"><h3>🏢 Partnership Agreement</h3><p>Going into business with someone? Set the terms before things get complicated.</p></div>
-    <div class="contract-card reveal"><h3>💼 Employment Contract</h3><p>Hire your first employee the right way. Covers role, pay, benefits, and termination.</p></div>
-    <div class="contract-card reveal"><h3>🏠 Lease Agreement</h3><p>Renting out a space? Protect yourself with a solid lease that covers all the bases.</p></div>
-  </div>
-</section>
-
-<div class="pricing-section" id="pricing">
-  <div class="pricing-inner">
-    <p class="section-label reveal">Pricing</p>
-    <h2 class="section-title reveal">Way cheaper than a lawyer.<br>Way better than nothing.</h2>
-    <div class="pricing-cards">
-      <div class="pricing-card reveal">
-        <div class="plan-name">Basic</div><div class="plan-price">$19</div>
-        <div class="plan-period">per contract or review</div>
-        <div class="feature-item"><span class="check">✓</span> Build any contract</div>
-        <div class="feature-item"><span class="check">✓</span> Review existing contracts</div>
-        <div class="feature-item"><span class="check">✓</span> PDF download</div>
-        <div class="feature-item"><span class="check">✓</span> Instant delivery</div>
-        <button class="plan-btn" onclick="openModal('build')">Get started</button>
+<div class="examples-section" id="examples">
+  <div class="examples-inner">
+    <p class="section-label reveal">Real examples</p>
+    <h2 class="section-title reveal">What people actually ask Tempo.</h2>
+    <div class="examples-grid">
+      <div class="example-card reveal">
+        <div class="example-q">"What tax deductions am I missing as a restaurant owner?"</div>
+        <div class="example-a">Tempo lists every deduction — food waste, equipment depreciation, staff meals, home office, vehicle use — most owners miss 5-10 of these.</div>
       </div>
-      <div class="pricing-card featured reveal">
-        <div class="plan-name">Pro</div><div class="plan-price">$49</div>
-        <div class="plan-period">per month · unlimited</div>
-        <div class="feature-item"><span class="check">✓</span> Everything in Basic</div>
-        <div class="feature-item"><span class="check">✓</span> Unlimited contracts</div>
-        <div class="feature-item"><span class="check">✓</span> Unlimited reviews</div>
-        <div class="feature-item"><span class="check">✓</span> Contract storage</div>
-        <button class="plan-btn" onclick="openModal('build')">Start Pro</button>
+      <div class="example-card reveal">
+        <div class="example-q">"Review my client contract and make it stronger"</div>
+        <div class="example-a">Tempo reads it, flags weak clauses, adds missing protections, and returns a rewritten version in 30 seconds.</div>
+      </div>
+      <div class="example-card reveal">
+        <div class="example-q">"Why isn't my website converting visitors into customers?"</div>
+        <div class="example-a">Tempo analyzes your site and gives you a specific list of fixes — better headline, clearer CTA, faster load time, trust signals missing.</div>
+      </div>
+      <div class="example-card reveal">
+        <div class="example-q">"Write me a cold email to pitch my cleaning service to offices"</div>
+        <div class="example-a">Tempo writes a personalized, compelling email that gets replies — not the generic stuff that goes straight to spam.</div>
+      </div>
+      <div class="example-card reveal">
+        <div class="example-q">"How should I respond to this 1-star review?"</div>
+        <div class="example-a">Paste the review and Tempo writes a professional, empathetic response that makes your business look good to everyone reading it.</div>
+      </div>
+      <div class="example-card reveal">
+        <div class="example-q">"What should I charge for my graphic design services?"</div>
+        <div class="example-a">Tempo analyzes your market, experience level, and location and gives you a specific pricing strategy — not just "it depends."</div>
       </div>
     </div>
   </div>
 </div>
+
+<section class="section" id="pricing">
+  <p class="section-label reveal">Pricing</p>
+  <h2 class="section-title reveal">Less than one hour<br>with a consultant.</h2>
+  <div class="pricing-cards">
+    <div class="pricing-card reveal">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$49</div>
+      <div class="plan-period">per month</div>
+      <div class="feature-item"><span class="check">✓</span> Unlimited questions</div>
+      <div class="feature-item"><span class="check">✓</span> Document improvement</div>
+      <div class="feature-item"><span class="check">✓</span> Website analysis</div>
+      <div class="feature-item"><span class="check">✓</span> Tax savings finder</div>
+      <div class="feature-item"><span class="check">✓</span> Legal document generation</div>
+      <button class="plan-btn" style="background:var(--black);color:var(--white)" onclick="openModal()">Get started</button>
+    </div>
+    <div class="pricing-card featured reveal">
+      <div class="plan-name">Team</div>
+      <div class="plan-price">$99</div>
+      <div class="plan-period">per month · up to 5 users</div>
+      <div class="feature-item"><span class="check">✓</span> Everything in Starter</div>
+      <div class="feature-item"><span class="check">✓</span> Up to 5 team members</div>
+      <div class="feature-item"><span class="check">✓</span> Shared document library</div>
+      <div class="feature-item"><span class="check">✓</span> Monthly business report</div>
+      <div class="feature-item"><span class="check">✓</span> Priority support</div>
+      <button class="plan-btn" onclick="openModal()">Get started</button>
+    </div>
+  </div>
+</section>
 
 <section class="cta-section">
-  <h2 class="reveal">Stop putting off that contract.</h2>
-  <p class="reveal">3 minutes. Less than lunch. Your business deserves to be protected.</p>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-    <button class="btn-primary reveal" onclick="openModal('build')">Create my contract →</button>
-    <button class="btn-secondary reveal" onclick="openModal('review')">Review my contract →</button>
-  </div>
+  <h2 class="reveal">Your business deserves better advice.</h2>
+  <p class="reveal">Try Tempo free — no credit card required. See what it can do for your business in the next 5 minutes.</p>
+  <button class="btn-primary reveal" onclick="openModal()">Try Tempo free →</button>
 </section>
 
 <footer>
-  <a href="#" class="footer-logo">Versa<span>.</span></a>
+  <a href="/" style="font-weight:500;font-size:16px;color:var(--black);text-decoration:none">Tempo</a>
   <ul class="footer-links"><li><a href="/terms.html">Terms</a></li><li><a href="/privacy.html">Privacy</a></li></ul>
-  <span class="footer-copy">© 2026 Versa Inc.</span>
+  <span class="footer-copy">© 2026 Tempo Inc.</span>
 </footer>
 
 <script>
 const demoMsgs=[
-  {role:'ai',text:"what kind of contract do you need? client agreement, NDA, contractor, partnership?"},
-  {role:'user',text:"client agreement for my design studio"},
-  {role:'ai',text:"perfect. what's the project and total payment amount?"},
-  {role:'user',text:"logo redesign, $2,500"},
-  {role:'ai',text:"got it — any payment terms? like 50% upfront, 50% on delivery?"},
+  {role:'user',text:"what tax deductions am I missing as a small restaurant?"},
+  {role:'ai',text:"good question — most restaurant owners miss at least 5 of these: meals for staff during shifts, food that spoils or gets wasted, equipment depreciation, delivery vehicle mileage, and your point-of-sale software subscription."},
+  {role:'user',text:"wait I had no idea about the food waste one"},
+  {role:'ai',text:"yeah it's one of the biggest missed deductions. you can write off spoiled inventory at cost. want me to help you estimate how much you're leaving on the table each year?"},
 ];
 const dc=document.getElementById('chat-messages');let di=0;
 function showDemo(){
   if(di>=demoMsgs.length){setTimeout(()=>{dc.innerHTML='';di=0;setTimeout(showDemo,800)},4000);return}
   const m=demoMsgs[di];
-  if(m.role==='ai'&&di>0){
+  if(m.role==='ai'){
     const t=document.createElement('div');t.className='message ai';
     t.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
     dc.appendChild(t);dc.scrollTop=9999;
-    setTimeout(()=>{dc.removeChild(t);addDemo(m);di++;setTimeout(showDemo,1800)},1200);
-  }else{addDemo(m);di++;setTimeout(showDemo,m.role==='ai'?1800:1200)}
+    setTimeout(()=>{dc.removeChild(t);addDemo(m);di++;setTimeout(showDemo,2000)},1400);
+  }else{addDemo(m);di++;setTimeout(showDemo,1200)}
 }
 function addDemo(m){
   const el=document.createElement('div');el.className='message '+m.role;
@@ -326,121 +328,61 @@ let started=false;
 let isLoading=false;
 let userMsgCount=0;
 let paywalled=false;
-let currentMode='build';
-let uploadedContract='';
 
-function switchMode(mode){
-  currentMode=mode;
-  document.getElementById('tab-build').classList.toggle('active',mode==='build');
-  document.getElementById('tab-review').classList.toggle('active',mode==='review');
-  const msgs=document.getElementById('modal-messages');
-  msgs.innerHTML='';
-  chatHistory=[];
-  userMsgCount=0;
-  paywalled=false;
-  uploadedContract='';
-  updateCounter();
-  document.getElementById('chat-input').disabled=false;
-  document.getElementById('send-btn').disabled=false;
-  document.getElementById('msg-counter').style.display='block';
-  const inputRow=document.getElementById('input-row');
-
-  if(mode==='review'){
-    document.getElementById('chat-input').placeholder='Describe your contract or paste it here...';
-    setTimeout(()=>{
-      addModalMsg('ai',"upload your contract below or just paste the text and I'll review every clause, flag anything risky, and explain it all in plain English 👇");
-      showUploadArea();
-    },300);
-  } else {
-    document.getElementById('chat-input').placeholder='Describe what you need...';
-    setTimeout(()=>addModalMsg('ai',"what type of contract do you need? client agreement, NDA, contractor, partnership, employment, or lease?"),300);
-  }
-}
-
-function showUploadArea(){
-  const msgs=document.getElementById('modal-messages');
-  const ua=document.createElement('div');
-  ua.className='upload-area';
-  ua.id='upload-area';
-  ua.innerHTML=`<div class="upload-icon">📄</div><p>drag & drop your contract here</p><p style="font-size:12px;margin-top:4px">PDF, Word, or paste the text below</p><button class="upload-btn" onclick="document.getElementById('file-input').click()">Choose file</button><input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt" style="display:none" onchange="handleFile(event)">`;
-  msgs.appendChild(ua);
-  msgs.scrollTop=9999;
-}
-
-function handleFile(e){
-  const file=e.target.files[0];
-  if(!file)return;
-  const ua=document.getElementById('upload-area');
-  if(ua)ua.remove();
-  addModalMsg('user','📄 '+file.name+' uploaded');
-  uploadedContract='User uploaded a contract file named: '+file.name+'. Perform a thorough contract review.';
-  chatHistory.push({role:'user',content:uploadedContract});
-  userMsgCount++;
-  updateCounter();
-  callAI();
-}
-
-function openModal(mode){
-  document.getElementById('modal').classList.add('open');
-  if(!started){
-    started=true;
-    currentMode=mode||'build';
-    document.getElementById('tab-build').classList.toggle('active',currentMode==='build');
-    document.getElementById('tab-review').classList.toggle('active',currentMode==='review');
-    if(currentMode==='review'){
-      document.getElementById('chat-input').placeholder='Or paste your contract text here...';
-      setTimeout(()=>{
-        addModalMsg('ai',"upload your contract below or paste the text and I'll review every clause, flag risky terms, and explain it all in plain English 👇");
-        showUploadArea();
-      },500);
-    } else {
-      setTimeout(()=>addModalMsg('ai',"hey! I'm Versa AI 👋 what type of contract do you need? client agreement, NDA, contractor, partnership, employment, or lease?"),500);
-    }
-  }
-}
-function closeModal(){document.getElementById('modal').classList.remove('open')}
-document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+const quickActions=[
+  "Find my tax deductions 💰",
+  "Improve my document 📄",
+  "Review my website 🌐",
+  "Write a sales email ✉️",
+  "Generate a contract ⚖️",
+  "Help me price my services 📈",
+];
 
 function updateCounter(){
   const remaining=Math.max(0,FREE_MSGS-userMsgCount);
   const counter=document.getElementById('msg-counter');
   if(paywalled){counter.style.display='none';return;}
+  counter.style.display='block';
   counter.textContent=remaining+' free message'+(remaining===1?'':'s')+' remaining';
   counter.style.color=remaining<=2?'#c0392b':'var(--gray)';
 }
 
-function showPaywall(mode){
-  paywalled=true;
-  document.getElementById('msg-counter').style.display='none';
-  const input=document.getElementById('chat-input');
-  input.disabled=true;
-  input.placeholder=mode==='review'?"get a plan to receive your full review":"get a plan to receive your contract";
-  document.getElementById('send-btn').disabled=true;
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  if(!started){
+    started=true;
+    setTimeout(()=>{
+      addModalMsg('ai',"hey! I'm Tempo, your AI business assistant 👋 what can I help you with today?");
+      showQuickActions();
+    },400);
+  }
+}
+
+function showQuickActions(){
   const msgs=document.getElementById('modal-messages');
-  const pw=document.createElement('div');
-  pw.className='paywall';
-  const title=mode==='review'?"your review is ready 🎉":"your contract is ready 🎉";
-  const sub=mode==='review'?"I've analyzed your contract. grab a plan and I'll send you the full review with all flagged clauses and suggestions.":"I have everything I need. grab a plan and I'll generate your professional contract as a PDF instantly.";
-  pw.innerHTML=`<div class="paywall-title">${title}</div><div class="paywall-sub">${sub}</div><div class="paywall-btns"><button class="paywall-btn basic" onclick="handlePlan('basic')">Basic · $19<br><span style="font-size:11px;font-weight:400">one time</span></button><button class="paywall-btn pro" onclick="handlePlan('pro')">Pro · $49/mo<br><span style="font-size:11px;font-weight:400">unlimited</span></button></div>`;
-  msgs.appendChild(pw);
+  const wrap=document.createElement('div');
+  wrap.id='quick-actions';
+  wrap.className='quick-actions';
+  quickActions.forEach(q=>{
+    const btn=document.createElement('button');
+    btn.className='quick-btn';
+    btn.textContent=q;
+    btn.onclick=()=>{
+      wrap.remove();
+      addModalMsg('user',q);
+      chatHistory.push({role:'user',content:q});
+      userMsgCount++;
+      updateCounter();
+      callAI();
+    };
+    wrap.appendChild(btn);
+  });
+  msgs.appendChild(wrap);
   msgs.scrollTop=9999;
 }
 
-function handlePlan(plan){
-  const price=plan==='basic'?'$19':'$49/month';
-  const msgs=document.getElementById('modal-messages');
-  const pw=msgs.querySelector('.paywall');
-  if(pw)pw.remove();
-  document.getElementById('chat-input').disabled=false;
-  document.getElementById('chat-input').placeholder='Type here...';
-  document.getElementById('send-btn').disabled=false;
-  paywalled=false;
-  userMsgCount=0;
-  updateCounter();
-  const msg=currentMode==='review'?"amazing! 🎉 you picked "+plan+" at "+price+". drop your email and I'll send your full contract review right away!":"amazing! 🎉 you picked "+plan+" at "+price+". drop your email and I'll send your completed contract PDF right away!";
-  addModalMsg('ai',msg);
-  chatHistory.push({role:'assistant',content:'User selected '+plan+' plan. Now collect email.'});
-}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
 
 function addModalMsg(role,text){
   const msgs=document.getElementById('modal-messages');
@@ -449,6 +391,7 @@ function addModalMsg(role,text){
   msgs.appendChild(el);msgs.scrollTop=9999;
   if(role==='ai')chatHistory.push({role:'assistant',content:text});
 }
+
 function showTyping(){
   const msgs=document.getElementById('modal-messages');
   const el=document.createElement('div');el.className='m-msg ai';el.id='typ';
@@ -458,29 +401,63 @@ function showTyping(){
 function hideTyping(){const t=document.getElementById('typ');if(t)t.remove()}
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage()}}
 
+function showPaywall(){
+  paywalled=true;
+  document.getElementById('msg-counter').style.display='none';
+  document.getElementById('chat-input').disabled=true;
+  document.getElementById('chat-input').placeholder='subscribe to keep going';
+  const msgs=document.getElementById('modal-messages');
+  const pw=document.createElement('div');
+  pw.className='paywall';
+  pw.innerHTML=`<div class="paywall-title">you've used your free messages</div>
+<div class="paywall-sub">subscribe to Tempo and get unlimited access to your AI business assistant — documents, tax advice, website reviews, and more.</div>
+<div class="paywall-btns">
+  <button class="paywall-btn starter" onclick="handlePlan('starter')">Starter · $49/mo<br><span style="font-size:11px;font-weight:400">1 user</span></button>
+  <button class="paywall-btn team" onclick="handlePlan('team')">Team · $99/mo<br><span style="font-size:11px;font-weight:400">up to 5 users</span></button>
+</div>`;
+  msgs.appendChild(pw);msgs.scrollTop=9999;
+}
+
+function handlePlan(plan){
+  paywalled=false;
+  const pw=document.querySelector('.paywall');if(pw)pw.remove();
+  document.getElementById('chat-input').disabled=false;
+  document.getElementById('chat-input').placeholder='Ask anything about your business...';
+  userMsgCount=0;
+  updateCounter();
+  addModalMsg('ai',"you're all set! 🎉 ask me anything — I'm here 24/7 to help with your business.");
+  chatHistory.push({role:'assistant',content:'User subscribed. Continue helping them with their business.'});
+}
+
 async function callAI(){
   isLoading=true;
-  document.getElementById('modal-status').textContent=currentMode==='review'?'● reviewing...':'● building...';
+  document.getElementById('modal-status').textContent='● thinking...';
   showTyping();
-  await new Promise(r=>setTimeout(r,800+Math.random()*800));
+  await new Promise(r=>setTimeout(r,700+Math.random()*800));
   try{
-    const systemPrompt=currentMode==='review'
-      ?`You are Versa AI, a professional contract review assistant. Review contracts thoroughly. Identify risky clauses, missing protections, unfair terms. Explain legal language in plain English. Be professional but friendly. Short messages — 2-4 sentences. Ask clarifying questions if needed. The user has ${FREE_MSGS-userMsgCount} free messages left so be efficient. Never say you're an AI.`
-      :`You are Versa AI, a professional contract building assistant. Help small businesses create contracts through conversation. Professional but friendly. Short messages — 1-3 sentences max. One question at a time. Collect both party names, scope, payment terms, timeline, special terms. The user has ${FREE_MSGS-userMsgCount} free messages left so gather key info efficiently. Never say you're an AI.`;
     const res=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:systemPrompt,messages:chatHistory})
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system:`You are Tempo, an AI business assistant for small business owners. You help with: tax deductions, document improvement, website feedback, business strategy, writing (emails, proposals, job postings), legal documents, pricing strategy, and any other business questions.
+
+Be direct, specific, and genuinely helpful. Give real actionable advice not generic platitudes. Keep responses conversational but substantive — 2-5 sentences for simple questions, more detail for complex ones. Use plain language. Be like a smart friend who knows business, not a corporate consultant.
+
+Never say you're an AI. You're Tempo.`,
+        messages:chatHistory
+      })
     });
     const data=await res.json();
     hideTyping();
     const reply=data.content&&data.content[0]?data.content[0].text:"sorry, can you repeat that?";
     addModalMsg('ai',reply);
-    document.getElementById('modal-status').textContent='● Online';
+    document.getElementById('modal-status').textContent='● Online — your business assistant';
   }catch(err){
     hideTyping();
-    addModalMsg('ai',"sorry, can you repeat that?");
-    document.getElementById('modal-status').textContent='● Online';
+    addModalMsg('ai',"sorry, something went wrong — try again?");
+    document.getElementById('modal-status').textContent='● Online — your business assistant';
   }
   isLoading=false;
   document.getElementById('chat-input').focus();
@@ -491,8 +468,7 @@ async function sendMessage(){
   const input=document.getElementById('chat-input');
   const text=input.value.trim();if(!text)return;
   input.value='';
-  const ua=document.getElementById('upload-area');
-  if(ua)ua.remove();
+  const qa=document.getElementById('quick-actions');if(qa)qa.remove();
   addModalMsg('user',text);
   chatHistory.push({role:'user',content:text});
   userMsgCount++;
@@ -500,12 +476,11 @@ async function sendMessage(){
   if(userMsgCount>=FREE_MSGS){
     isLoading=true;
     showTyping();
-    await new Promise(r=>setTimeout(r,1000));
+    await new Promise(r=>setTimeout(r,800));
     hideTyping();
-    const msg=currentMode==='review'?"ok I've analyzed enough to give you a full review — grab a plan below and I'll send you everything 👇":"ok I have everything I need to build your contract — grab a plan below and I'll generate it instantly 👇";
-    addModalMsg('ai',msg);
+    addModalMsg('ai',"I can help with that! subscribe to Tempo to get the full answer and unlimited access 👇");
     isLoading=false;
-    setTimeout(()=>showPaywall(currentMode),600);
+    setTimeout(showPaywall,600);
     return;
   }
   callAI();
